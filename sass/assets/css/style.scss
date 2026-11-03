@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url(fonts/InterVariable.woff2) format("woff2");
+  src: url(/fonts/InterVariable.woff2) format("woff2");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(fonts/InterDisplay-Bold.woff2) format("woff2");
+  src: url(/fonts/InterDisplay-Bold.woff2) format("woff2");
 }
 
 $font-copy: Inter, Helvetica, Arial, system-ui;
@@ -98,7 +98,7 @@ main {
     aspect-ratio: 16 / 10;
     padding: 0.75em 1em;
     overflow: hidden;
-    background: url(banner.avif) top / cover;
+    background: url(/assets/images/banner.avif) top / cover;
     color: $accent;
 
     .emblem {
@@ -180,7 +180,7 @@ header {
       content: "";
       grid-row: 2;
       aspect-ratio: 16 / 10;
-      background: url(banner.avif) center / cover;
+      background: url(/assets/images/banner.avif) center / cover;
     }
 
     .emblem {
@@ -191,7 +191,7 @@ header {
       color: $page;
 
       img {
-        content: url(xxi.svg);
+        content: url(/assets/images/xxi.svg);
         margin-bottom: 0.25em;
       }
     }

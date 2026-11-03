@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
-    <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}" />
-    <link rel="icon" href="{{ get_url(path="favicon.svg") | safe }}" type="image/svg+xml" />
-    <link rel="icon" href="{{ get_url(path="favicon.png") | safe }}" type="image/png" sizes="32x32" />
+    <link rel="stylesheet" href="{{ get_url(path="assets/css/style.css") | safe }}" />
+    <link rel="icon" href="{{ get_url(path="assets/images/favicon.svg") | safe }}" type="image/svg+xml" />
+    <link rel="icon" href="{{ get_url(path="assets/images/favicon.png") | safe }}" type="image/png" sizes="32x32" />
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
   </head>
   <body>
