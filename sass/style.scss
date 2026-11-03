@@ -1,0 +1,183 @@
+$font-copy: Inter, Helvetica, Arial, system-ui;
+$font-heading: "Inter Display", Helvetica, Arial, sans-serif;
+
+$page: #0d0d07;
+$surface: #151b0d;
+$accent: #9dd62f;
+$accent-hover: #bed600;
+$rule: #26461a;
+
+$entry-gradient: linear-gradient(
+  to right,
+  $accent,
+  #35be40,
+  #1b963f,
+  #245d27,
+  $rule
+);
+$entry-hover-gradient: linear-gradient(
+  to right,
+  $accent-hover,
+  $accent,
+  #35be40,
+  #1b963f,
+  #245d27,
+  $rule
+);
+
+$content-width: 50em;
+$narrow-width: 35em;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: $page;
+  color: $accent;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font: 16px / 1.5 $font-copy;
+}
+
+a {
+  color: $accent;
+
+  &:hover {
+    color: $accent-hover;
+    text-decoration-style: dotted;
+  }
+
+  &.external::after {
+    content: "\2197";
+    font-size: 0.85em;
+    font-weight: 300;
+  }
+}
+
+hr {
+  margin: 0.75em 0;
+  border: 0;
+  border-top: 0.125em dotted $rule;
+}
+
+time {
+  font-variant-numeric: tabular-nums;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: $content-width;
+  min-height: 100svh;
+  background: $surface;
+
+  &.homepage .banner {
+    aspect-ratio: 16 / 10;
+    padding: 0.75em 1em;
+    overflow: hidden;
+    background: url(banner.avif) top / cover;
+    color: $accent;
+
+    .emblem {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-family: $font-heading;
+        font-optical-sizing: none;
+        font-weight: bold;
+      }
+
+      img.crosses {
+        width: 1.5em;
+      }
+    }
+  }
+}
+
+.content {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0 1em;
+
+  p {
+    margin: 0.75em 0;
+    line-height: 1.6;
+  }
+
+  header time {
+    color: $rule;
+  }
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  &::after {
+    content: "";
+    flex: 1;
+    order: 1;
+    height: 0.08333em;
+    background: $entry-gradient;
+  }
+
+  &:has(span.title:hover)::after {
+    background: $entry-hover-gradient;
+  }
+
+  time {
+    order: 2;
+    color: $rule;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 0;
+
+  h1 {
+    margin: 0;
+    font-family: $font-heading;
+  }
+}
+
+@media (max-width: $narrow-width) {
+  main.homepage .banner {
+    display: grid;
+    aspect-ratio: auto;
+    padding: 0;
+    background: none;
+
+    &::before {
+      content: "";
+      grid-row: 2;
+      aspect-ratio: 16 / 10;
+      background: url(banner.avif) center / cover;
+    }
+
+    .emblem {
+      position: static;
+      grid-row: 1;
+      padding: 0.5em 0.75em;
+      background: $accent;
+      color: $page;
+
+      img {
+        content: url(xxi.svg);
+        margin-bottom: 0.25em;
+      }
+    }
+  }
+}

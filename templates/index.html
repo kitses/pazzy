@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main_attrs %} class="homepage"{% endblock main_attrs %}
+
+{% block content %}
+<div class="banner">
+  <div class="emblem">
+    <span>{{ config.title }}</span>
+    <img src="{{ get_url(path="xx.svg") | safe }}" alt="" class="crosses" />
+  </div>
+</div>
+<div class="content">
+  {{ section.content | safe }}
+  <hr>
+  {% set posts = get_section(path="posts/_index.md") %}
+  {% for post in posts.pages %}
+  <div class="entry">
+    <span class="title"><a href="{{ post.permalink | safe }}">{{ post.title }}</a></span>
+    <time datetime="{{ post.date | date(format="%Y-%m-%d") }}">{{ post.date | date(format="%Y-%m-%d") }}</time>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

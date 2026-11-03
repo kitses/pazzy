@@ -1,0 +1,10 @@
+base_url = "https://pazzy.llia.cc"
+title = "Pazzy Ninine"
+description = "Wolfdog, sound artist, CSS and graphic design pervert from Laurel."
+default_language = "en"
+generate_robots_txt = false
+compile_sass = true
+minify_html = true
+
+[markdown]
+external_links_class = "external"
